@@ -1,0 +1,72 @@
+#include <iostream>
+#include<cstring>
+#include<fstream>
+using namespace std;
+
+class Worker
+{
+private:
+	string name;
+	int age, hours, salary;
+	int payday;
+	int primy;
+public:
+	void work()
+	{
+
+		salary = hours * payday;
+		cout << salary << endl;
+		if (payday < 1) primy = 0;
+		else
+		{
+			if (age > 1 && age < 3) primy = 0.05 * salary;
+			else
+			{
+				if (age > 1 && age < 3) primy = 0.05 * salary;
+				else
+				{
+					if (age > 3 && age < 5) primy =0.08 * salary ;
+					else
+					{
+						if (age > 5) primy = 0.15 * salary;
+					}
+				}
+			}
+			
+		}
+		
+	}
+		void getworker()
+		{
+			cout << "работник: "; cin >> name; cout << endl;
+			cout << "стаж: "; cin >> age; cout << endl;
+			cout << "оплата по часу: "; cin >> payday; cout << endl;
+			cout << "отработано часов " ; cin >> hours; cout << endl;
+		    cout << "опыт " << age << endl;
+			cout << "почасовая оплата" << hours << endl;
+			work();
+			cout << " з/п " << hours * payday << endl;
+				
+			cout << "премия " << primy << endl;
+			cout << "информация о " << name << endl;
+
+
+		}
+	
+	
+	
+};
+
+int main()
+{
+	system("color F9");
+	setlocale(0, "rus");
+	Worker ds;
+	ds.getworker();
+
+
+
+
+
+	return 0;
+}
